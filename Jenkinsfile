@@ -7,5 +7,13 @@ pipeline {
       }
     }
 
+    stage('Restore') {
+      steps {
+        sh '''echo "testing 123"
+
+'''
+      }
+    }
+
   }
 }
