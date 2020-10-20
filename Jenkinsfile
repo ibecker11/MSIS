@@ -8,10 +8,21 @@ pipeline {
     }
 
     stage('Restore') {
-      steps {
-        sh '''echo "testing 123"
+      parallel {
+        stage('Restore') {
+          steps {
+            sh '''echo "testing 123"
 
 '''
+          }
+        }
+
+        stage('clone tree') {
+          steps {
+            sh 'echo "Clone code-tree"'
+          }
+        }
+
       }
     }
 
